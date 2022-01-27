@@ -1,0 +1,23 @@
+	
+public static string Encode(string plainText)
+    {
+		StringBuilder sb = new StringBuilder();
+		char [] myCharText = plainText.ToLower().ToCharArray();
+		int myCounter = 0 ;
+		
+		for (int i=1; i < myCharText.Length; i++) {
+				if (myCharText[i] == myCharText[i-1]) {
+				  	myCounter++;				
+				} else if (myCharText[i] != myCharText[i-1]) {
+					sb.Append(myCounter + 1);
+					sb.Append(myCharText[i-1]);
+					myCounter = 0;
+				} 
+				if (i == (myCharText.Length -1)){
+					sb.Append(myCounter + 1);
+					sb.Append(myCharText[i]);
+					myCounter = 0;
+				} 
+		}
+	 return sb.ToString();
+}

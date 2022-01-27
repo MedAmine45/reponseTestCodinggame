@@ -1,0 +1,26 @@
+using System;
+
+/// Point class
+class Point
+{
+    // keep these fields
+    public double x, y;
+}
+
+class Pi {
+
+    /// Approximate pi using the given​​​​​​‌​​‌​​​​‌​​‌‌‌‌​‌​‌‌‌‌‌​‌ points.
+    /// <returns>an approximation of pi</returns>
+    public static double Approx(Point[] pts)
+    {
+         double per_cir = 0;
+        foreach (var point in pts) {
+
+        double PI = 3.14;
+        double circleRadius = Math.Sqrt((point.x*point.x) + (point.y*point.y));
+        per_cir = 2 * PI * circleRadius;
+        }
+        return per_cir ;  
+       
+	}
+}

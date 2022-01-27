@@ -1,0 +1,18 @@
+using System;
+
+class Solution
+{
+    /// <returns>the sum of integers whose index is between n1 and n2</returns>
+	public static int Calc(int[] array, int n1, int n2) {
+
+       	List <int> intervalN = new List<int> ();
+	int sum = 0;
+		
+	for (int i = n1; i <= n2 ; i++) {
+		intervalN.Add(i);
+	}
+		
+	return intervalN.Sum();
+
+    }
+}

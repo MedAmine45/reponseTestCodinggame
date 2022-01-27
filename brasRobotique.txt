@@ -1,0 +1,29 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+class Player
+{
+
+    public static string Solve(int width, int height, int length, int mass)
+    {    
+        bool encombrant = ((width * height * length >= 1000000) || (width >= 150 || height >= 150 || length >= 150));
+        bool lourd = mass >= 20 ;
+        string cmd = "" ;
+          if (!encombrant && !lourd) {
+          cmd = "STANDARD";
+          } 
+          if (encombrant || lourd) {
+          cmd ="SPECIAL";
+          } 
+          if (encombrant && lourd) {
+          cmd = "REJECTED";
+          }
+
+       return cmd;
+    }
+
+}

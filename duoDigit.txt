@@ -1,0 +1,44 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+class Solution
+{
+
+    public static int IsDuoDigit(int number)
+    {
+        // Write your code here
+        // To debug: Console.Error.WriteLine("Debug messages...");
+        int postNumber = number > 0 ? number : -number; 
+        string numbStr = postNumber.ToString();
+        char [] myCharNumb = numbStr.ToCharArray();
+        int res = 1;
+        List<int> test = new List<int>();
+
+        if (myCharNumb.Length > 2) {
+        for (int i=0; i < myCharNumb.Length; i++) {
+                test.Add(myCharNumb.Count(o => o == myCharNumb[i]));
+        }
+        if (test.Any( o => o <= 1))
+        res = 0;
+        }
+        
+        return res;
+    }
+
+    /* Ignore and do not change the code below */
+    #region
+    static void Main(string[] args)
+    {
+        int number = int.Parse(Console.ReadLine());
+        var stdtoutWriter = Console.Out;
+        Console.SetOut(Console.Error);
+        int result = IsDuoDigit(number);
+        Console.SetOut(stdtoutWriter);
+        Console.WriteLine(result);
+    }
+    #endregion
+}

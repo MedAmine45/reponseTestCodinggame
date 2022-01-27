@@ -1,0 +1,11 @@
+using System.Collections.Generic;
+using System.Linq;
+
+class Answer
+{
+    /// Filters the​​​​​​‌​​‌​​​​‌​‌‌​​‌​‌‌‌‌‌​​​​ strings
+    public IEnumerable<string> Filter(List<string> strings)
+    {
+        return strings.Where(o => o.StartsWith("L")).OrderBy(o=>o) ;
+    }
+}
